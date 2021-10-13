@@ -68,7 +68,7 @@ function initializeApp() {
 
     const idToken = liff.getIDToken();
     if (idToken.length > 0) {
-        const url = "/pages/home2/id_token/" + idToken;
+        const url = "/liff?id_token=" + idToken;
         location.href=url;
     }
     console.log(idToken) // print raw idToken object

@@ -26,6 +26,7 @@ class LiffController extends AppController
 
     public function index()
     {
-        return true;
+        $idToken = $this->request->getQuery('id_token');
+        $this->set(compact('idToken'));
     }
 }
