@@ -66,12 +66,12 @@ function initializeApp() {
     displayIsInClientInfo();
     registerButtonHandlers();
 
-    const idToken = liff.getIDToken();
-    if (idToken.length > 0) {
-        const url = "/liff?id_token=" + idToken;
-        location.href=url;
-    }
-    console.log(idToken) // print raw idToken object
+    // const idToken = liff.getIDToken();
+    // if (idToken.length > 0) {
+    //     const url = "/liff?id_token=" + idToken;
+    //     location.href=url;
+    // }
+    // console.log(idToken) // print raw idToken object
 
     // check if the user is logged in/out, and disable inappropriate button
     if (liff.isLoggedIn()) {
