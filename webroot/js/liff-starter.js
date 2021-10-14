@@ -71,7 +71,9 @@ function initializeApp() {
     //     const url = "/liff?id_token=" + idToken;
     //     location.href=url;
     // }
-    // console.log(idToken) // print raw idToken object
+    console.log(idToken) // print raw idToken object
+
+    
 
     // check if the user is logged in/out, and disable inappropriate button
     if (liff.isLoggedIn()) {
