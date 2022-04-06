@@ -7,9 +7,30 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <button id="getProfileButton">Get Profile</button>
-        <h5>LINE USER ID</h5>
-        <p id="user-id"></p>
+        <div id="liffAppContent">
+            <button id="getProfileButton">Get Profile</button>
+            <!-- PROFILE INFO -->
+            <div id="profileInfo" class="hidden textLeft">
+                <h2>Profile</h2>
+                <a href="#" onclick="toggleProfileData()">Close Profile</a>
+                <div id="profilePictureDiv">
+                </div>
+                <table>
+                    <tr>
+                        <th>userId</th>
+                        <td id="userIdProfileField"></td>
+                    </tr>
+                    <tr>
+                        <th>displayName</th>
+                        <td id="displayNameField"></td>
+                    </tr>
+                    <tr>
+                        <th>statusMessage</th>
+                        <td id="statusMessageField"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
         <?= $this->Html->script('liff-starter2') ?>
     </body>

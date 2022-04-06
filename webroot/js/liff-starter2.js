@@ -65,12 +65,6 @@ function initializeApp() {
     displayLiffData();
     displayIsInClientInfo();
     registerButtonHandlers();
-    liff.getProfile().then(function(profile) {
-        alert(profile.userId);
-        document.getElementById('user-id').textContent = profile.userId;
-    }).catch(function(error) {
-        window.alert('Error getting profile: ' + error);
-    });
 
     // const idToken = liff.getIDToken();
     // if (idToken.length > 0) {
@@ -165,21 +159,29 @@ function registerButtonHandlers() {
 
     // get profile call
     document.getElementById('getProfileButton').addEventListener('click', function() {
+        if (!liff.isLoggedIn() && !liff.isInClient()) {
+            alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
+        } else {
+            const accessToken = liff.getAccessToken();
+            document.getElementById('accessTokenField').textContent = accessToken;
+            toggleAccessToken();
+        }
+
         liff.getProfile().then(function(profile) {
-            document.getElementById('user-id').textContent = profile.userId;
-            // document.getElementById('displayNameField').textContent = profile.displayName;
+            document.getElementById('userIdProfileField').textContent = profile.userId;
+            document.getElementById('displayNameField').textContent = profile.displayName;
 
-            // const profilePictureDiv = document.getElementById('profilePictureDiv');
-            // if (profilePictureDiv.firstElementChild) {
-            //     profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-            // }
-            // const img = document.createElement('img');
-            // img.src = profile.pictureUrl;
-            // img.alt = 'Profile Picture';
-            // profilePictureDiv.appendChild(img);
+            const profilePictureDiv = document.getElementById('profilePictureDiv');
+            if (profilePictureDiv.firstElementChild) {
+                profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+            }
+            const img = document.createElement('img');
+            img.src = profile.pictureUrl;
+            img.alt = 'Profile Picture';
+            profilePictureDiv.appendChild(img);
 
-            // document.getElementById('statusMessageField').textContent = profile.statusMessage;
-            // toggleProfileData();
+            document.getElementById('statusMessageField').textContent = profile.statusMessage;
+            toggleProfileData();
         }).catch(function(error) {
             window.alert('Error getting profile: ' + error);
         });
