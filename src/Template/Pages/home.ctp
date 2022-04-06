@@ -23,6 +23,8 @@
                     <button id="shareTargetPicker" style="display:none">Open Share Target Picker</button>
                 </div>
             </div>
+            <h2>userId</h2>
+            <p id="userIdProfileField"></p>
             <div id="shareTargetPickerMessage" style="display:none"></div>
             <!-- ACCESS TOKEN DATA -->
             <div id="accessTokenData" class="hidden textLeft" style="display:none">
@@ -37,8 +39,8 @@
             </div>
             <!-- PROFILE INFO -->
             <div id="profileInfo" class="hidden textLeft">
-                <h2>userId</h2>
-                <p id="userIdProfileField"></p>
+                <h2 style="display:none">userId</h2>
+                <p id="userIdProfileField3"></p>
                 <a href="#" onclick="toggleProfileData()" style="display:none">Close Profile</a>
                 <div id="profilePictureDiv" style="display:none">
                 </div>
