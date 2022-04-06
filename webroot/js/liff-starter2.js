@@ -17,8 +17,8 @@ window.onload = function() {
                 initializeLiffOrDie(myLiffId);
             })
             .catch(function(error) {
-                document.getElementById("liffAppContent").classList.add('hidden');
-                document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden');
+                document.getElementById("liffAppContent").classList.add('hidden-disabled');
+                document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden-disabled');
             });
     } else {
         myLiffId = defaultLiffId;
@@ -32,8 +32,8 @@ window.onload = function() {
 */
 function initializeLiffOrDie(myLiffId) {
     if (!myLiffId) {
-        document.getElementById("liffAppContent").classList.add('hidden');
-        document.getElementById("liffIdErrorMessage").classList.remove('hidden');
+        document.getElementById("liffAppContent").classList.add('hidden-disabled');
+        document.getElementById("liffIdErrorMessage").classList.remove('hidden-disabled');
     } else {
         initializeLiff(myLiffId);
     }
@@ -53,8 +53,8 @@ function initializeLiff(myLiffId) {
             initializeApp();
         })
         .catch((err) => {
-            document.getElementById("liffAppContent").classList.add('hidden');
-            document.getElementById("liffInitErrorMessage").classList.remove('hidden');
+            document.getElementById("liffAppContent").classList.add('hidden-disabled');
+            document.getElementById("liffInitErrorMessage").classList.remove('hidden-disabled');
         });
 }
 
@@ -100,12 +100,12 @@ function displayLiffData() {
 */
 function displayIsInClientInfo() {
     if (liff.isInClient()) {
-        document.getElementById('liffLoginButton').classList.toggle('hidden');
-        document.getElementById('liffLogoutButton').classList.toggle('hidden');
+        document.getElementById('liffLoginButton').classList.toggle('hidden-disabled');
+        document.getElementById('liffLogoutButton').classList.toggle('hidden-disabled');
         document.getElementById('isInClientMessage').textContent = 'You are opening the app in the in-app browser of LINE.';
     } else {
         document.getElementById('isInClientMessage').textContent = 'You are opening the app in an external browser.';
-        document.getElementById('shareTargetPicker').classList.toggle('hidden');
+        document.getElementById('shareTargetPicker').classList.toggle('hidden-disabled');
     }
 }
 
