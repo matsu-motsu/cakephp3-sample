@@ -16,6 +16,13 @@ window.onload = function() {
                 myLiffId = jsonResponse.id;
                 initializeLiffOrDie(myLiffId);
             })
+            .then(() => {
+                liff.getProfile().then(function(profile) {
+                    document.getElementById('userId').textContent = profile.userId;
+                }).catch(function(error) {
+                    window.alert('Error getting profile: ' + error);
+                });
+            })
             .catch(function(error) {
                 document.getElementById("liffAppContent").classList.add('hidden');
                 document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden');
