@@ -7,9 +7,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h5>LINE USER ID</h5>
-        <p id="userId"></p>
-        <div id="liffAppContent" style="display:none">
+        <div id="liffAppContent">
             <!-- ACTION BUTTONS -->
             <div class="buttonGroup">
                 <div class="buttonRow">
@@ -102,7 +100,7 @@
             </div>
         </div>
         <!-- LIFF ID ERROR -->
-        <div id="liffIdErrorMessage" class="hidden" style="display:none">
+        <div id="liffIdErrorMessage" class="hidden">
             <p>You have not assigned any value for LIFF ID.</p>
             <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku account follwing the below steps: </p>
             <code id="code-block">
@@ -118,12 +116,12 @@
             <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
         </div>
         <!-- LIFF INIT ERROR -->
-        <div id="liffInitErrorMessage" class="hidden" style="display:none">
+        <div id="liffInitErrorMessage" class="hidden">
             <p>Something went wrong with LIFF initialization.</p>
             <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.</p>
         </div>
         <!-- NODE.JS LIFF ID ERROR -->
-        <div id="nodeLiffIdErrorMessage" class="hidden" style="display:none">
+        <div id="nodeLiffIdErrorMessage" class="hidden">
             <p>Unable to receive the LIFF ID as an environment variable.</p>
         </div>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>

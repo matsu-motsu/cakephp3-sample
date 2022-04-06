@@ -16,20 +16,6 @@ window.onload = function() {
                 myLiffId = jsonResponse.id;
                 initializeLiffOrDie(myLiffId);
             })
-            .then(() => {
-                if (!liff.isLoggedIn() && !liff.isInClient()) {
-                    alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
-                } else {
-                    liff.getAccessToken();
-                }
-            })
-            .then(() => {
-                liff.getProfile().then(function(profile) {
-                    document.getElementById('userId').textContent = profile.userId;
-                }).catch(function(error) {
-                    window.alert('Error getting profile: ' + error);
-                });
-            })
             .catch(function(error) {
                 document.getElementById("liffAppContent").classList.add('hidden');
                 document.getElementById("nodeLiffIdErrorMessage").classList.remove('hidden');
