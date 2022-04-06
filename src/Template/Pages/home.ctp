@@ -37,14 +37,15 @@
             </div>
             <!-- PROFILE INFO -->
             <div id="profileInfo" class="hidden textLeft">
-                <h2>Profile</h2>
+                <h2>userId</h2>
+                <p id="userIdProfileField"></p>
                 <a href="#" onclick="toggleProfileData()" style="display:none">Close Profile</a>
                 <div id="profilePictureDiv" style="display:none">
                 </div>
                 <table>
                     <tr>
                         <th>userId</th>
-                        <td id="userIdProfileField"></td>
+                        <td id="userIdProfileField2"></td>
                     </tr>
                     <tr style="display:none">
                         <th>displayName</th>
