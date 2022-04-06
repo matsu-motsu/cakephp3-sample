@@ -11,21 +11,21 @@
             <!-- ACTION BUTTONS -->
             <div class="buttonGroup">
                 <div class="buttonRow">
-                    <button id="openWindowButton">Open External Window</button>
-                    <button id="closeWindowButton">Close LIFF App</button>
+                    <button id="openWindowButton" style="display:none">Open External Window</button>
+                    <button id="closeWindowButton" style="display:none">Close LIFF App</button>
                 </div>
                 <div class="buttonRow">
-                    <button id="sendMessageButton">Send Message</button>
-                    <button id="getAccessToken">Get Access Token</button>
+                    <button id="sendMessageButton" style="display:none">Send Message</button>
+                    <button id="getAccessToken" style="display:none">Get Access Token</button>
                 </div>
                 <div class="buttonRow">
                     <button id="getProfileButton">Get Profile</button>
-                    <button id="shareTargetPicker">Open Share Target Picker</button>
+                    <button id="shareTargetPicker" style="display:none">Open Share Target Picker</button>
                 </div>
             </div>
-            <div id="shareTargetPickerMessage"></div>
+            <div id="shareTargetPickerMessage" style="display:none"></div>
             <!-- ACCESS TOKEN DATA -->
-            <div id="accessTokenData" class="hidden textLeft">
+            <div id="accessTokenData" class="hidden textLeft" style="display:none">
                 <h2>Access Token</h2>
                 <a href="#" onclick="toggleAccessToken()">Close Access Token</a>
                 <table>
@@ -38,26 +38,26 @@
             <!-- PROFILE INFO -->
             <div id="profileInfo" class="hidden textLeft">
                 <h2>Profile</h2>
-                <a href="#" onclick="toggleProfileData()">Close Profile</a>
-                <div id="profilePictureDiv">
+                <a href="#" onclick="toggleProfileData()" style="display:none">Close Profile</a>
+                <div id="profilePictureDiv" style="display:none">
                 </div>
                 <table>
                     <tr>
                         <th>userId</th>
                         <td id="userIdProfileField"></td>
                     </tr>
-                    <tr>
+                    <tr style="display:none">
                         <th>displayName</th>
                         <td id="displayNameField"></td>
                     </tr>
-                    <tr>
+                    <tr style="display:none">
                         <th>statusMessage</th>
                         <td id="statusMessageField"></td>
                     </tr>
                 </table>
             </div>
             <!-- LIFF DATA -->
-            <div id="liffData">
+            <div id="liffData" style="display:none">
                 <h2 id="liffDataHeader" class="textLeft">LIFF Data</h2>
                 <table>
                     <tr>
@@ -87,11 +87,11 @@
                 </table>
             </div>
             <!-- LOGIN LOGOUT BUTTONS -->
-            <div class="buttonGroup">
+            <div class="buttonGroup" style="display:none">
                 <button id="liffLoginButton">Log in</button>
                 <button id="liffLogoutButton">Log out</button>
             </div>
-            <div id="statusMessage">
+            <div id="statusMessage" style="display:none">
                 <div id="isInClientMessage"></div>
                 <div id="apiReferenceMessage">
                     <p>Available LIFF methods vary depending on the browser you use to open the LIFF app.</p>
@@ -100,7 +100,7 @@
             </div>
         </div>
         <!-- LIFF ID ERROR -->
-        <div id="liffIdErrorMessage" class="hidden">
+        <div id="liffIdErrorMessage" class="hidden" style="display:none">
             <p>You have not assigned any value for LIFF ID.</p>
             <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your Heroku account follwing the below steps: </p>
             <code id="code-block">
@@ -116,12 +116,12 @@
             <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF app</a>.</p>
         </div>
         <!-- LIFF INIT ERROR -->
-        <div id="liffInitErrorMessage" class="hidden">
+        <div id="liffInitErrorMessage" class="hidden" style="display:none">
             <p>Something went wrong with LIFF initialization.</p>
             <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error occurs in the process of <code>liff.init()</code>.</p>
         </div>
         <!-- NODE.JS LIFF ID ERROR -->
-        <div id="nodeLiffIdErrorMessage" class="hidden">
+        <div id="nodeLiffIdErrorMessage" class="hidden" style="display:none">
             <p>Unable to receive the LIFF ID as an environment variable.</p>
         </div>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
