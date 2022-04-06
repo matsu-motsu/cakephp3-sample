@@ -45,7 +45,7 @@
                 <div id="profilePictureDiv" style="display:none">
                 </div>
                 <table>
-                    <tr style="display:none">>
+                    <tr style="display:none">
                         <th>userId</th>
                         <td id="userIdProfileField2"></td>
                     </tr>
