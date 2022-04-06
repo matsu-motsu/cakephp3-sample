@@ -19,11 +19,11 @@
                     <button id="getAccessToken" style="display:none">Get Access Token</button>
                 </div>
                 <div class="buttonRow">
-                    <button id="getProfileButton">Get Profile</button>
+                    <button id="getProfileButton">ここをタップ！</button>
                     <button id="shareTargetPicker" style="display:none">Open Share Target Picker</button>
                 </div>
             </div>
-            <h2>userId</h2>
+            <h2>LINE USER ID</h2>
             <p id="userIdProfileField"></p>
             <div id="shareTargetPickerMessage" style="display:none"></div>
             <!-- ACCESS TOKEN DATA -->
