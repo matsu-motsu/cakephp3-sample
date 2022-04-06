@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <button id="getProfileButton">Get Profile</button>
         <h5>LINE USER ID</h5>
         <p id="user-id"></p>
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
