@@ -65,6 +65,11 @@ function initializeApp() {
     displayLiffData();
     displayIsInClientInfo();
     registerButtonHandlers();
+    liff.getProfile().then(function(profile) {
+        document.getElementById('user-id').textContent = profile.userId;
+    }).catch(function(error) {
+        window.alert('Error getting profile: ' + error);
+    });
 
     // const idToken = liff.getIDToken();
     // if (idToken.length > 0) {
