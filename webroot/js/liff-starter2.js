@@ -173,7 +173,7 @@ function registerButtonHandlers() {
             profilePictureDiv.appendChild(img);
 
             document.getElementById('statusMessageField').textContent = profile.statusMessage;
-            toggleProfileData();
+            // toggleProfileData();
         }).catch(function(error) {
             window.alert('Error getting profile: ' + error);
         });
