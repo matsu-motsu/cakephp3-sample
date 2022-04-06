@@ -17,6 +17,13 @@ window.onload = function() {
                 initializeLiffOrDie(myLiffId);
             })
             .then(() => {
+                if (!liff.isLoggedIn() && !liff.isInClient()) {
+                    alert('To get an access token, you need to be logged in. Please tap the "login" button below and try again.');
+                } else {
+                    liff.getAccessToken();
+                }
+            })
+            .then(() => {
                 liff.getProfile().then(function(profile) {
                     document.getElementById('userId').textContent = profile.userId;
                 }).catch(function(error) {
